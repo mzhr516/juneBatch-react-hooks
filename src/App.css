@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+.formValidation{
+  width: 50%;
+  margin-left: 23%;
+}

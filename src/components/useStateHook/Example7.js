@@ -1,21 +1,19 @@
 import React, { useState } from "react";
 
 export const Example7 = () => {
-  const [isShow, setIsShow] = useState(false);
+  const [isshow, setIsShow] = useState(false);
   const handleClick = () => {
-    // if (isShow ) {
-    //   setIsShow(false);
-    // } else {
-    //   setIsShow(true);
-    // }
-
-    setIsShow((prev) => (prev ? false : true));
+    if (isshow === true) {
+      setIsShow(false);
+    } else {
+      setIsShow(true);
+    }
   };
 
   return (
     <>
       <div>
-        {isShow && (
+        {isshow && (
           <div
             style={{
               width: "150px",
@@ -28,7 +26,7 @@ export const Example7 = () => {
           />
         )}
 
-        <button onClick={handleClick}>{isShow ? "hide" : "show"}</button>
+        <button onClick={handleClick}>{isshow ? "hide" : "show"}</button>
       </div>
     </>
   );
