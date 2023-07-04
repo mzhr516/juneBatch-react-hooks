@@ -10,6 +10,7 @@ import { Example6 } from "./components/useStateHook/Example6";
 import { Example7 } from "./components/useStateHook/Example7";
 import { FormValidation } from "./components/useStateHook/FormValidation";
 import { ObtimizeFormValidation } from "./components/useStateHook/obtimizeFormValidation";
+import { ValidationWithLibrary } from "./components/useStateHook/validationWithLib";
 
 function App() {
   return (
@@ -30,8 +31,12 @@ function App() {
       <hr /> */}
       <div className="formValidation">
         {/* <FormValidation /> */}
-        <hr/>
+        <hr />
+        <h1>custom validation</h1>
         <ObtimizeFormValidation />
+        <hr />
+        <h1>validation with lib</h1>
+        <ValidationWithLibrary />
       </div>
     </div>
   );
