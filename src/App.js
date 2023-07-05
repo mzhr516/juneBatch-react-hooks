@@ -11,10 +11,13 @@ import { Example7 } from "./components/useStateHook/Example7";
 import { FormValidation } from "./components/useStateHook/FormValidation";
 import { ObtimizeFormValidation } from "./components/useStateHook/obtimizeFormValidation";
 import { ValidationWithLibrary } from "./components/useStateHook/validationWithLib";
+import { Example1 } from "./components/useEffectHook/example1";
 
 function App() {
   return (
     <div className="App">
+      {/* useState */}
+
       {/* <Counter />
       <hr />
       <Example2 />
@@ -28,16 +31,23 @@ function App() {
       <Example6 />
       <hr />
       <Example7 />
-      <hr /> */}
+      <hr />
       <div className="formValidation">
-        {/* <FormValidation /> */}
+        <FormValidation />
         <hr />
         <h1>custom validation</h1>
         <ObtimizeFormValidation />
         <hr />
         <h1>validation with lib</h1>
         <ValidationWithLibrary />
-      </div>
+      </div> */}
+
+      {/* ----------------------------------------------------- */}
+
+      {/* useEffect */}
+
+      <Example1/>
+
     </div>
   );
 }
