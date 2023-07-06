@@ -11,7 +11,7 @@ import { Example7 } from "./components/useStateHook/Example7";
 import { FormValidation } from "./components/useStateHook/FormValidation";
 import { ObtimizeFormValidation } from "./components/useStateHook/obtimizeFormValidation";
 import { ValidationWithLibrary } from "./components/useStateHook/validationWithLib";
-import { Example1 } from "./components/useEffectHook/example1";
+import { Example02 } from "./components/useEffectHook/example2";
 
 function App() {
   return (
@@ -46,7 +46,8 @@ function App() {
 
       {/* useEffect */}
 
-      <Example1/>
+      {/* <Example2/> */}
+      <Example02/>
 
     </div>
   );

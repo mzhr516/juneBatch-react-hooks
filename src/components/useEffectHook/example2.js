@@ -1,28 +1,29 @@
 import React, { useEffect, useState } from "react";
-import { Child } from "./child";
 
-export const Example1 = () => {
+export const Example02 = () => {
   const [count, setCount] = useState(0);
-  const [calculation, setCalculation] = useState(0);
+  const [reRenderCount, setReRenderCount] = useState(0);
+
   useEffect(() => {
-    setCalculation(count * 2);
+    setReRenderCount(reRenderCount + 1);
+  }, [count]);
+
+  useEffect(() => {
+    document.title = `value of counter:${count}`;
   }, [count]);
 
   const minus = () => {
     setCount(count - 1);
-    // setCalculation(count * 2);
   };
   const plus = () => {
     setCount(count + 1);
-
-    // setCalculation(count * 2);
   };
   return (
     <div>
       <button onClick={plus}>+</button>
       {count}
       <button onClick={minus}>-</button>
-      <h1>calculation : {calculation}</h1>
+      <h1>count of re-render:{reRenderCount}</h1>
     </div>
   );
 };
