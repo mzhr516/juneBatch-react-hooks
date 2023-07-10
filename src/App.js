@@ -12,6 +12,7 @@ import { FormValidation } from "./components/useStateHook/FormValidation";
 import { ObtimizeFormValidation } from "./components/useStateHook/obtimizeFormValidation";
 import { ValidationWithLibrary } from "./components/useStateHook/validationWithLib";
 import { Example02 } from "./components/useEffectHook/example2";
+import { CRUD } from "./components/CRUD";
 
 function App() {
   return (
@@ -47,8 +48,10 @@ function App() {
       {/* useEffect */}
 
       {/* <Example2/> */}
-      <Example02/>
-
+      {/* <Example02/> */}
+      <div className="formValidation">
+        <CRUD />
+      </div>
     </div>
   );
 }
