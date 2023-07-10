@@ -4,11 +4,25 @@ import { Button, Form, Table } from "react-bootstrap";
 export const CRUD = () => {
   const [formData, setFormData] = useState({ name: "", age: 0 });
   const [empList, setEmpList] = useState([]);
-  //   console.log(empList)
-
+  const [isUpdate, setIsupdate] = useState(false);
+  const [updateIndex, setUpdateIndex] = useState(null);
+  
   const submit = (event) => {
     event.preventDefault();
-    setEmpList([...empList, { name: formData.name, age: formData.age }]);
+
+    if (!isUpdate) {
+      setEmpList([...empList, { name: formData.name, age: formData.age }]);
+    } else {
+      const updatedEmpList = empList.map((value, index) => {
+        if (index === updateIndex) {
+          return { name: formData.name, age: formData.age };
+        } else {
+          return value;
+        }
+      });
+      setEmpList(updatedEmpList);
+    }
+
     setFormData({ name: "", age: 0 });
   };
 
@@ -27,6 +41,11 @@ export const CRUD = () => {
     setEmpList(newEmpList);
   };
 
+  const onEmpUpadte = (name, age, index) => {
+    setIsupdate(true);
+    setFormData({ name, age });
+    setUpdateIndex(index);
+  };
   return (
     <div>
       <h1>create operation</h1>
@@ -75,7 +94,11 @@ export const CRUD = () => {
                 <td>{value.name}</td>
                 <td>{value.age}</td>
                 <td>
-                  <Button>update</Button>{" "}
+                  <Button
+                    onClick={() => onEmpUpadte(value.name, value.age, index)}
+                  >
+                    update
+                  </Button>{" "}
                   <Button onClick={() => onEmpdelete(index)}>delete</Button>
                 </td>
               </tr>
