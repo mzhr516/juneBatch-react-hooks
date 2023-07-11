@@ -8,20 +8,27 @@ export const CRUD = () => {
   const [isUpdate, setIsUpdate] = useState(false);
   const [upDateEmpIndex, setUpdateEmpIndex] = useState(null);
 
+  const CreateEmp = () => {
+    setEmpList([...empList, { name: formData.name, age: formData.age }]);
+  };
+  const upadteEmp = () => {
+    const updatedEmpList = empList.map((value, index) => {
+      if (index === upDateEmpIndex) {
+        return formData;
+      } else {
+        return value;
+      }
+    });
+    setEmpList(updatedEmpList);
+    setIsUpdate(false);
+  };
+
   const submit = (event) => {
     event.preventDefault();
     if (!isUpdate) {
-      setEmpList([...empList, { name: formData.name, age: formData.age }]);
+      CreateEmp();
     } else {
-      const updatedEmpList = empList.map((value, index) => {
-        if (index === upDateEmpIndex) {
-          return formData;
-        } else {
-          return value;
-        }
-      });
-      setEmpList(updatedEmpList);
-      setIsUpdate(false);
+      upadteEmp();
     }
 
     setFormData({ name: "", age: 0 });
@@ -34,11 +41,7 @@ export const CRUD = () => {
   };
 
   const onEmpdelete = (empIndex) => {
-    const newEmpList = empList.filter((value, index) => {
-      if (index !== empIndex) {
-        return value;
-      }
-    });
+    const newEmpList = empList.filter((value, index) => index !== empIndex);
     setEmpList(newEmpList);
   };
 
