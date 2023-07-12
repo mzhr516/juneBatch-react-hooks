@@ -16,6 +16,7 @@ import { CRUD } from "./components/CRUD";
 import { Model } from "./components/model";
 import { useRef, useState } from "react";
 import { Example001 } from "./components/useRef/Examople1";
+import { Example002 } from "./components/useRef/Example2";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,14 +70,6 @@ function App() {
       {/* <Example02/> */}
       <div className="formValidation">
         <CRUD />
-        <CRUD />
-        <CRUD />
-        <CRUD />
-        <CRUD />
-        <CRUD />
-        <CRUD />
-        <CRUD />
-        <CRUD />
       </div>
       {/* {isOpen && <Model setIsOpen={setIsOpen} />}
       <button onClick={() => setIsOpen(true)}>open model</button> */}
@@ -84,6 +77,9 @@ function App() {
       <hr />
       <Example001 />
       <button onClick={handleOnTopClick}>to Top</button>
+      <hr />
+      <Example002 />
+      <hr />
       <div ref={bottomRef} />
     </div>
   );
