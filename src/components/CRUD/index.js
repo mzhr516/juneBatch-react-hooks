@@ -11,6 +11,7 @@ export const CRUD = () => {
   const CreateEmp = () => {
     setEmpList([...empList, { name: formData.name, age: formData.age }]);
   };
+
   const upadteEmp = () => {
     const updatedEmpList = empList.map((value, index) => {
       if (index === upDateEmpIndex) {

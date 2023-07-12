@@ -13,10 +13,28 @@ import { ObtimizeFormValidation } from "./components/useStateHook/obtimizeFormVa
 import { ValidationWithLibrary } from "./components/useStateHook/validationWithLib";
 import { Example02 } from "./components/useEffectHook/example2";
 import { CRUD } from "./components/CRUD";
+import { Model } from "./components/model";
+import { useRef, useState } from "react";
+import { Example001 } from "./components/useRef/Examople1";
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const bottomRef = useRef(null);
+  const topRef = useRef(null);
+
+  const handleOnBottomClick = () => {
+    bottomRef.current.scrollIntoView();
+  };
+
+  const handleOnTopClick = () => {
+    topRef.current.scrollIntoView();
+  };
+
   return (
     <div className="App">
+      <div ref={topRef} />
+      <button onClick={handleOnBottomClick}>to bottom</button>
       {/* useState */}
 
       {/* <Counter />
@@ -51,7 +69,22 @@ function App() {
       {/* <Example02/> */}
       <div className="formValidation">
         <CRUD />
+        <CRUD />
+        <CRUD />
+        <CRUD />
+        <CRUD />
+        <CRUD />
+        <CRUD />
+        <CRUD />
+        <CRUD />
       </div>
+      {/* {isOpen && <Model setIsOpen={setIsOpen} />}
+      <button onClick={() => setIsOpen(true)}>open model</button> */}
+      {/* -----------------------useRef-------------- */}
+      <hr />
+      <Example001 />
+      <button onClick={handleOnTopClick}>to Top</button>
+      <div ref={bottomRef} />
     </div>
   );
 }

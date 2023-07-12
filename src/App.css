@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; */
 }
 
 .App-logo {
@@ -39,4 +43,10 @@
 .formValidation{
   width: 50%;
   margin-left: 23%;
+}
+.model{
+  height: 50vh;
+  width: 40%;
+  background-color:aquamarine;
+  /* background: transparent; */
 }
