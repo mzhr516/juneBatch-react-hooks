@@ -11,12 +11,14 @@ import { Example7 } from "./components/useStateHook/Example7";
 import { FormValidation } from "./components/useStateHook/FormValidation";
 import { ObtimizeFormValidation } from "./components/useStateHook/obtimizeFormValidation";
 import { ValidationWithLibrary } from "./components/useStateHook/validationWithLib";
-import { Example02 } from "./components/useEffectHook/example2";
+// import { Example02 } from "./components/useEffectHook/example2";
 import { CRUD } from "./components/CRUD";
 import { Model } from "./components/model";
 import { useRef, useState } from "react";
 import { Example001 } from "./components/useRef/Examople1";
 import { Example002 } from "./components/useRef/Example2";
+import { Example01 } from "./components/useMemo/Example1";
+import { Example02 } from "./components/useMemo/Example2";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,8 +36,8 @@ function App() {
 
   return (
     <div className="App">
-      <div ref={topRef} />
-      <button onClick={handleOnBottomClick}>to bottom</button>
+      {/* <div ref={topRef} />
+      <button onClick={handleOnBottomClick}>to bottom</button> */}
       {/* useState */}
 
       {/* <Counter />
@@ -68,19 +70,23 @@ function App() {
 
       {/* <Example2/> */}
       {/* <Example02/> */}
-      <div className="formValidation">
+      {/* <div className="formValidation">
         <CRUD />
-      </div>
+      </div> */}
       {/* {isOpen && <Model setIsOpen={setIsOpen} />}
       <button onClick={() => setIsOpen(true)}>open model</button> */}
       {/* -----------------------useRef-------------- */}
-      <hr />
+      {/* <hr />
       <Example001 />
       <button onClick={handleOnTopClick}>to Top</button>
       <hr />
       <Example002 />
       <hr />
-      <div ref={bottomRef} />
+      <div ref={bottomRef} /> */}
+      {/* useMemo */}
+      {/* <Example01 /> */}
+      <hr/>
+      <Example02/>
     </div>
   );
 }

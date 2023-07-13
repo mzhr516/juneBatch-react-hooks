@@ -2,10 +2,12 @@ import React, { useEffect, useRef, useState } from "react";
 
 export const Example002 = (props) => {
   const [value, setValue] = useState("");
+//   const [prevValue,setPrevValue]=useState("")
   const prevValue = useRef("");
   useEffect(() => {
     prevValue.current = value;
-  });
+    // setPrevValue(value)
+  },[value]);
 
   const handleOnChange = (e) => {
     setValue(e.target.value);
