@@ -7,17 +7,17 @@ export const CRUD = () => {
   const [empList, setEmpList] = useState([]);
   const [isUpdate, setIsUpdate] = useState(false);
   const [upDateEmpIndex, setUpdateEmpIndex] = useState(null);
-
+  // console.log(empList);
   const CreateEmp = () => {
     setEmpList([...empList, { name: formData.name, age: formData.age }]);
   };
 
   const upadteEmp = () => {
-    const updatedEmpList = empList.map((value, index) => {
-      if (index === upDateEmpIndex) {
-        return formData;
+    const updatedEmpList = empList.map((emp, index) => {
+      if (index == upDateEmpIndex) {
+        return { name: formData.name, age: formData.age };
       } else {
-        return value;
+        return emp;
       }
     });
     setEmpList(updatedEmpList);
@@ -26,7 +26,7 @@ export const CRUD = () => {
 
   const submit = (event) => {
     event.preventDefault();
-    if (!isUpdate) {
+    if (isUpdate === false) {
       CreateEmp();
     } else {
       upadteEmp();
@@ -47,9 +47,9 @@ export const CRUD = () => {
   };
 
   const onEmpUpadte = (empDetails, empIndex) => {
-    setFormData(empDetails);
-    setIsUpdate(true);
-    setUpdateEmpIndex(empIndex);
+    setFormData(empDetails); // to show user details in form
+    setIsUpdate(true); // to change the form behavior
+    setUpdateEmpIndex(empIndex); // to compair the user from empList
   };
 
   return (

@@ -1,18 +1,22 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 
 export const Example02 = () => {
   const [count, setCount] = useState(0);
   const [todos, setTodos] = useState([]);
+
   const addTodo = () => {
     setTodos([...todos, "todo"]);
   };
 
-  //   const calculation = expensiveCalculation(count);
+  // const calculation = expensiveCalculation(count);
 
   const calculation = useMemo(() => {
     return expensiveCalculation(count);
   }, [count]);
-  
+  //   const calculation = useMemo(() => {
+  //     return expensiveCalculation(count);
+  //   }, []);
+
   return (
     <div>
       <div>
@@ -26,7 +30,7 @@ export const Example02 = () => {
       <div>
         Count: {count} <button onClick={() => setCount(count + 1)}>+</button>
         <h2>Expensive Calculation</h2>
-        {calculation}
+        {calculation()}
       </div>
     </div>
   );

@@ -19,6 +19,7 @@ import { Example001 } from "./components/useRef/Examople1";
 import { Example002 } from "./components/useRef/Example2";
 import { Example01 } from "./components/useMemo/Example1";
 import { Example02 } from "./components/useMemo/Example2";
+import { ParentComponent } from "./components/UseCallback/parent";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -86,7 +87,8 @@ function App() {
       {/* useMemo */}
       {/* <Example01 /> */}
       <hr/>
-      <Example02/>
+      {/* <Example02/> */}
+      <ParentComponent/>
     </div>
   );
 }
